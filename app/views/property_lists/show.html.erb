@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @property_list.property %>
+</p>
+
+<p>
+  <strong>Rent:</strong>
+  <%= @property_list.rent %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @property_list.age %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @property_list.address %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @property_list.remark %>
+</p>
+
+<%= link_to 'Edit', edit_property_list_path(@property_list) %> |
+<%= link_to 'Back', property_lists_path %>
