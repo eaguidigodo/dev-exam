@@ -8,18 +8,18 @@ class PropertyListsController < ApplicationController
 
   # GET /property_lists/1 or /property_lists/1.json
   def show
-    @property_list.properties.build
   end
 
   # GET /property_lists/new
   def new
     @property_list = PropertyList.new
-    @property_list.properties.build
+    2.times do
+      @property_list.properties.build
+    end
   end
 
   # GET /property_lists/1/edit
   def edit
-    @property_list.properties.build
   end
 
   # POST /property_lists or /property_lists.json
@@ -39,6 +39,7 @@ class PropertyListsController < ApplicationController
 
   # PATCH/PUT /property_lists/1 or /property_lists/1.json
   def update
+    @property_list.properties.build
     respond_to do |format|
       if @property_list.update(property_list_params)
         format.html { redirect_to @property_list, notice: "Property list was successfully updated." }
@@ -67,8 +68,9 @@ class PropertyListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_list_params
-      params.require(:property_list).permit(:property, :rent, :age, :address, :remark,
-                                            property_attributes: [:id, :line, :station_name, :minute]
+      params.require(:property_list)
+            .permit(:property, :rent, :age, :address, :remark,
+             properties_attributes: [:id, :line, :station_name, :minute]
       )
     end
 end

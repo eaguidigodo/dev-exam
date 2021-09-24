@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Property Detail</h1>
 <p>
   <strong>Property:</strong>
   <%= @property_list.property %>
@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong>Building Age:</strong>
   <%= @property_list.age %>
 </p>
 
@@ -21,9 +21,27 @@
 </p>
 
 <p>
-  <strong>Remark:</strong>
+  <strong>Remarks:</strong>
   <%= @property_list.remark %>
 </p>
+<hr>
+<% @property_list.properties.each_with_index do |details, index| %>
+  <h1>Nearest station<%=index+1%>  </h1>
+<p>
+  <strong>Name of railway:</strong>
+  <%= details.line %>
+</p>
+
+<p>
+  <strong>Station name:</strong>
+  <%= details.station_name %>
+</p>
+
+<p>
+  <strong>How many minutes walk:</strong>
+  <%= details.minute %>
+</p>
+<% end %>
 
 <%= link_to 'Edit', edit_property_list_path(@property_list) %> |
 <%= link_to 'Back', property_lists_path %>
