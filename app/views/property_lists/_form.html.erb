@@ -10,10 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
   
   <div class="field">
     <%= form.label :Property %>
@@ -55,6 +51,10 @@
     <div class="field">
       <%= properties_form.label :minute, "How many minutes walk" %>
       <%= properties_form.number_field :minute %>min/mins
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
       <% end %>
 <% end %>

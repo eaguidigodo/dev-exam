@@ -2,14 +2,21 @@
 
 <h1>Property List</h1>
 
+<%= link_to 'New Property', new_property_list_path %>
+
+<br>
+
+<br>
+<br>
+
 <table>
   <thead>
     <tr>
       <th>Property</th>
       <th>Rent</th>
-      <th>Age</th>
       <th>Address</th>
-      <th>Remark</th>
+      <th>Building age</th>
+      <th>Remarks</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,8 +26,8 @@
       <tr>
         <td><%= property_list.property %></td>
         <td><%= property_list.rent %></td>
-        <td><%= property_list.age %></td>
         <td><%= property_list.address %></td>
+        <td><%= property_list.age %></td>
         <td><%= property_list.remark %></td>
         <td><%= link_to 'Show', property_list %></td>
         <td><%= link_to 'Edit', edit_property_list_path(property_list) %></td>
@@ -29,7 +36,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Property List', new_property_list_path %>
